@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System - Registration</title>
+    <link rel="stylesheet" href="../css/stylesheetr.css">
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        #headersection {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        #bodysection {
+            padding: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        #image,
+        #role {
+            border: 2px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            width: 50%;
+        }
+        #role select {
+            border-radius: 5px;
+            padding: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        a {
+            color: deeppink;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+<center>
+    <div id="headersection">
+    <h1>Online Voting System</h1>
+    </div>
+    <hr>
+<div id="bodysection">
+        
+        <form id="registrationForm" action="../api/register.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <h2>Registration</h2><br>
+        <input type="text" name="name" id="name" placeholder="Enter name">
+        <input type="number" name="mno" id="mno" placeholder="Enter mobile"><br><br>
+        
+        <input type="password" name="password" id="password" placeholder="Password">
+        <input type="password" name="cpassword" id="cpassword" placeholder="Confirm password"><br><br>
+        
+        <input type="date" name="birthdate" id="birthdate" placeholder="Birthdate"><br><br>
+        
+        <input type="text" name="address" id="address" placeholder="Address"><br><br>
+        
+        <div id="image">
+        Upload image: <input id="demo" type="file" name="photo">
+        </div><br>
+        <div id="role">
+        Select role:<select name="role" id="role">
+           
+            <option value="1">Voter</option>
+            <option value="2">Group</option>
+        </select>
+        </div>
+        
+        <br>
+
+        <button style="padding: 10px;
+                       border-radius: 5px;
+                       background-color: deeppink;
+                       ">
+                       Register</button><br><br>
+        Already user? <a href="../index.html">Login here</a>
+    </form>
+</div>
+</center>
+
+<script>
+    function validateForm() {
+        var name = document.getElementById('name').value;
+        var mno = document.getElementById('mno').value;
+        var password = document.getElementById('password').value;
+        var cpassword = document.getElementById('cpassword').value;
+        var birthdate = document.getElementById('birthdate').value;
+        var address = document.getElementById('address').value;
+        var photo = document.getElementById('demo').value;
+        var role = document.getElementById('role').value;
+
+        if (name === "" || mno === "" || password === "" || cpassword === "" || address === "" || photo === "" || role === "") {
+            alert("Please fill up all the details.");
+            return false;
+        }
+
+        // Check if birthdate is before 2005
+        var birthYear = new Date(birthdate).getFullYear();
+        if (birthYear >= 2005) {
+            alert("You are not eligible to vote.");
+            return false;
+        } else {
+            alert("You can vote. Please login.");
+        }
+        
+        // Additional validation can be added here if needed
+
+        return true;
+    }
+</script>
+
+</body>
+</html>

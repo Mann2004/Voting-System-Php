@@ -1,0 +1,80 @@
+body{
+    
+    
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+.bg-image{
+    background-image: url('https://mdbootstrap.com/img/new/standard/city/041.jpg');
+    height: 100vh">
+
+}
+
+#headersection{
+    padding: 5px;
+
+}
+
+#headersection h1{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+input{
+    padding: 12px;
+    border-radius: 5px;
+
+}
+
+#dropbox{
+    padding: 12px;
+    border-radius: 5px;
+    width: 15%;
+}
+
+
+
+h1 {
+    margin: 0;
+}
+
+#bodysection {
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+}
+input[type="number"],
+input[type="password"],
+select {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#loginbtn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#loginbtn:hover {
+    background-color: #69aaff;
+}
+a {
+    color: deeppink;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+

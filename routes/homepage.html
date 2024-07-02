@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+            display: none; /* Initially hide the nav */
+        }
+        
+        nav.active {
+            display: block; /* Show the nav when active */
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: #555;
+        }
+        
+        .container {
+            background-color: #f5f5f5;
+            padding: 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            background-color: deeppink;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #ff1493;
+        }
+        
+        /* Style for the toggle button */
+      
+
+        @media only screen and (max-width: 768px) {
+            .toggle-btn {
+                display: block; /* Show on smaller screens */
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                z-index: 1000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../routes/contactus.html">Contact Us</a>
+        <a href="../routes/register.html">Register</a>
+        <a href="../index.html">Login</a>
+    </nav>
+
+    <!-- Toggle button -->
+    <div class="toggle-btn" onclick="toggleNav()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </div>
+
+    <div class="container">
+        <h1>Welcome to Online Voting System</h1>
+        <p>Online voting is a convenient way to participate in elections from the comfort of your own home. It allows you to cast your vote securely and efficiently without having to visit a physical polling station.</p>
+        <p>Our platform ensures the integrity and confidentiality of your vote, providing a reliable and accessible way for you to exercise your democratic right.</p>
+        <p>Before you can vote, you need to register. Click the button below to get started:</p>
+        <a href="../routes/register.html" class="btn">Register to Vote</a>
+    </div>
+
+    <script>
+        function toggleNav() {
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
